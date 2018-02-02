@@ -69,7 +69,7 @@ $(window)
 
     });
 $('document').ready(function () {
-    Barba.Pjax.cacheEnabled = false;
+    Barba.Pjax.cacheEnabled = true;
     Barba
         .Pjax
         .start({});
