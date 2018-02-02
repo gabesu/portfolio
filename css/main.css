@@ -419,7 +419,7 @@ h2 {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  cursor: url("../../images/cursor.png"), auto; }
+  cursor: -webkit-image-set(url("../images/cursor@2x.png") 2x), auto; }
   *::selection {
     background: black;
     color: white; }
