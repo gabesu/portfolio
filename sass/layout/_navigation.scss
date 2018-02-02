@@ -1,0 +1,80 @@
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    &>a {
+        padding: 20px;
+        display: inline-block;
+    }
+    .logo {
+        height: 20px;
+        fill: $text-body;
+        transition: all 200ms cubic-bezier(1, -0.08, 0, 2.01);
+        &:hover {
+            transform: scale(.9);
+            fill: $yellow;
+        }
+    }
+    .about {
+        display: flex;
+        flex: 0 1 auto;
+        justify-content: space-between;
+        align-content: center;
+        text-decoration: none;
+        color: $text-body;
+        .avatar {
+            height: 40px;
+            border-radius: 30px;
+        }
+        .info {
+            margin-left: 1.5rem;
+            white-space: nowrap;
+            @include font($tiny-font);
+        }
+    }
+}
+
+.work-nav {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    list-style: none;
+    .nav {
+        position: relative;
+        padding: 10px 30px;
+        transition: all 200ms ease-in-out;
+        text-transform: uppercase;
+        font-size: $tiny-font;
+        &:hover {
+            &:before {
+                width: 100px;
+            }
+        }
+        &:before {
+            content: '';
+            width: 50px;
+            height: 1px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background: $text-body;
+            display: inline-block;
+            transition: all 200ms ease-in-out;
+        }
+        &.active {
+            color: black; // font-weight: bold;
+            right: 5px;
+        }
+        &.active:before {
+            background: red;
+            width: 200px
+        }
+    }
+}

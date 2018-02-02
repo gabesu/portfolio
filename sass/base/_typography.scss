@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Butler';
+    src: url('../../fonts/butler_bold-webfont.woff');
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    @include font($normal-font);
+    font-family: 'Open Sans', sans-serif;
+    color: $text-body;
+}
+
+h1,
+h2 {
+    font-family: 'Butler', serif;
+    color: black;
+}
+
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Playfair Display', serif;

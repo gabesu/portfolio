@@ -1,0 +1,41 @@
+.btn {
+    text-decoration: none;
+    background: black;
+    border-radius: 3px;
+    color: white;
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    height: 5rem;
+    font-size: 1.2rem;
+    line-height: 5rem;
+    letter-spacing: .2rem;
+    padding: 0 3rem;
+    overflow: hidden;
+    margin: auto;
+    text-transform: uppercase;
+    .btn-over {
+        position: absolute;
+        overflow: hidden;
+    }
+    .btn-under {
+        // @extend .btn-over;
+    }
+    .ok {
+        position: relative;
+        float: left;
+        z-index: 100;
+    }
+    .bg-hover {
+        position: absolute;
+        width: 0;
+        height: 5.2rem;
+        border-radius: 0 5.2rem 5.2rem 0;
+        left: 0;
+        top: 0;
+        background: #E98B39;
+        ~.bg-hover {
+            background: #1C2471;
+        }
+    }
+}

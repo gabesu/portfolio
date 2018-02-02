@@ -1,0 +1,20 @@
+.intro {
+    display: flex;
+    height: 100vh;
+    .intro-image {
+        width: 50%;
+        height: 100vh;
+        background: black;
+        animation: intro-image 1s ease-out forwards;
+        transform-origin: left center;
+    }
+}
+
+@keyframes intro-image {
+    0% {
+        transform: scale(0, 1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}

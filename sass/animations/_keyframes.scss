@@ -1,0 +1,45 @@
+@keyframes flicker {
+    0% {
+        text-shadow: 5px 0 $yellow;
+    }
+    50% {
+        text-shadow: 5px 0 $yellow;
+    }
+    51% {
+        text-shadow: -5px 0 red;
+    }
+    100% {
+        text-shadow: -5px 0 red;
+    }
+}
+
+@keyframes zoom-out {
+    0% {
+        background-size: 130%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
