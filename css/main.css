@@ -432,42 +432,67 @@ h2 {
   margin-top: 120px;
   display: flex;
   flex: 0 1 auto;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
   padding: 20px;
   position: relative; }
-  .project .summary {
-    width: 30%;
-    position: relative;
-    overflow: hidden; }
-    .project .summary .title {
-      opacity: 0;
-      animation: slide-in-left 300ms forwards ease-in-out 300ms; }
-    .project .summary .role {
-      opacity: 0;
-      font-size: 1rem;
-      text-transform: uppercase;
-      display: inline-block;
-      animation: slide-in-left 300ms forwards ease-in-out 600ms; }
-    .project .summary .description {
-      opacity: 0;
-      animation: slide-in-left 300ms forwards ease-in-out 900ms; }
-    .project .summary .info {
-      position: sticky;
-      top: 120px; }
-  .project .content {
-    width: 60%; }
-    .project .content .project-image {
-      width: 100%;
-      margin-top: 100px;
-      opacity: 0;
-      transition: all 300ms ease-in-out; }
-      .project .content .project-image:first-of-type {
-        margin-top: 0; }
-      .project .content .project-image img {
-        width: 100%; }
-      .project .content .project-image.slide-in {
-        animation: slide-in-right 500ms forwards ease-in-out; }
+  .project .current-project {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px; }
+    .project .current-project .summary {
+      width: 30%;
+      position: relative;
+      overflow: visible; }
+      .project .current-project .summary .title {
+        opacity: 0;
+        animation: slide-in-left 300ms forwards ease-in-out 300ms; }
+      .project .current-project .summary .role {
+        opacity: 0;
+        font-size: 1rem;
+        text-transform: uppercase;
+        display: inline-block;
+        animation: slide-in-left 300ms forwards ease-in-out 600ms; }
+      .project .current-project .summary .description {
+        opacity: 0;
+        animation: slide-in-left 300ms forwards ease-in-out 900ms; }
+      .project .current-project .summary .info {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 120px; }
+      .project .current-project .summary .project-link {
+        text-decoration: none;
+        font-family: "Butler";
+        color: #7f7f7f;
+        position: relative; }
+        .project .current-project .summary .project-link .icon-screen-desktop {
+          color: black; }
+        .project .current-project .summary .project-link::before {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 1px;
+          background: black;
+          bottom: -10px;
+          left: 0;
+          transition: all 200ms ease-in-out; }
+        .project .current-project .summary .project-link:hover {
+          color: black; }
+          .project .current-project .summary .project-link:hover::before {
+            width: 100%; }
+    .project .current-project .content {
+      width: 60%; }
+      .project .current-project .content .project-image {
+        width: 100%;
+        margin-top: 100px;
+        opacity: 0;
+        transition: all 300ms ease-in-out; }
+        .project .current-project .content .project-image:first-of-type {
+          margin-top: 0; }
+        .project .current-project .content .project-image img {
+          width: 100%; }
+        .project .current-project .content .project-image.slide-in {
+          animation: slide-in-right 500ms forwards ease-in-out; }
 
 .nav-bar {
   width: 100%;
@@ -551,6 +576,36 @@ h2 {
     transform: scale(0, 1); }
   100% {
     transform: scale(1, 1); } }
+.next-project {
+  border-top: 1px solid #e5e5e5;
+  width: 100%;
+  display: flex;
+  padding: 50px;
+  flex-direction: column; }
+  .next-project .label {
+    margin: auto;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding: 20px; }
+  .next-project .next {
+    font-family: "Butler";
+    font-size: 3rem;
+    color: black;
+    margin: auto;
+    position: relative;
+    text-decoration: none; }
+    .next-project .next::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: black;
+      bottom: -10px;
+      left: 0;
+      transition: all 200ms ease-in-out; }
+    .next-project .next:hover::before {
+      width: 100%; }
+
 .btn {
   text-decoration: none;
   background: black;
@@ -743,5 +798,49 @@ h2 {
       color: black; }
       .welcome .start:hover:before {
         height: 2px; }
+
+.about-me {
+  z-index: 200;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex; }
+  .about-me .profile-picture {
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: url(../images/self.jpg);
+    background-position: 50% 50%; }
+  .about-me .bio {
+    padding: 50px;
+    width: 60%;
+    font-family: "Butler";
+    font-size: 3rem;
+    line-height: 4.854rem; }
+    .about-me .bio .close {
+      float: right;
+      font-size: 1.8rem; }
+    .about-me .bio .text {
+      margin-top: 100px; }
+    .about-me .bio .yellow {
+      color: #FECB2F; }
+    .about-me .bio .link {
+      color: #7f7f7f;
+      text-decoration: none;
+      position: relative; }
+      .about-me .bio .link::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        background: #7f7f7f;
+        bottom: -3px;
+        left: 0;
+        transition: all 200ms ease-in-out; }
+      .about-me .bio .link:hover::before {
+        width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

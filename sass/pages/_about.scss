@@ -1,0 +1,54 @@
+.about-me {
+    z-index: 200;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    .profile-picture {
+        width: 40%;
+        height: 100%;
+        display: block;
+        background: url(../images/self.jpg);
+        background-position: 50% 50%;
+    }
+    .bio {
+        padding: 50px;
+        width: 60%; // color: white;
+        font-family: $playfair;
+        @include font($large-font);
+        .close {
+            float: right;
+            font-size: 1.8rem;
+        }
+        .text {
+            margin-top: 100px;
+        }
+        .yellow {
+            color: $yellow;
+        }
+        .link {
+            color: $text-body;
+            text-decoration: none;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 1px;
+                background: $text-body;
+                bottom: -3px;
+                left: 0;
+                transition: all 200ms ease-in-out;
+            }
+            &:hover {
+                // color: black;
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
