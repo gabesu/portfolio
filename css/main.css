@@ -397,6 +397,16 @@ template {
 [hidden] {
   display: none; }
 
+body {
+  position: relative;
+  width: 100%; }
+  body.no-scroll {
+    overflow: hidden !important; }
+
+#barba-wrapper {
+  display: block;
+  height: 100%; }
+
 @font-face {
   font-family: 'Butler';
   src: url("../fonts/butler_bold-webfont.woff"); }
@@ -427,6 +437,13 @@ h2 {
 .container {
   width: 100%;
   padding: 20px 40px; }
+  .container.work {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5; }
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px; } }
 
 .project {
   margin-top: 120px;
@@ -438,12 +455,18 @@ h2 {
   position: relative; }
   .project .current-project {
     display: flex;
+    position: relative;
     justify-content: space-between;
     padding-bottom: 50px; }
+    @media (max-width: 768px) {
+      .project .current-project {
+        flex-direction: column;
+        text-align: center; } }
     .project .current-project .summary {
-      width: 30%;
-      position: relative;
-      overflow: visible; }
+      flex: 2; }
+      @media (max-width: 768px) {
+        .project .current-project .summary {
+          flex: 1; } }
       .project .current-project .summary .title {
         opacity: 0;
         animation: slide-in-left 300ms forwards ease-in-out 300ms; }
@@ -481,18 +504,24 @@ h2 {
           .project .current-project .summary .project-link:hover::before {
             width: 100%; }
     .project .current-project .content {
-      width: 60%; }
+      flex: 4;
+      padding-left: 100px; }
+      @media (max-width: 768px) {
+        .project .current-project .content {
+          padding: 0;
+          padding-top: 4rem; } }
       .project .current-project .content .project-image {
         width: 100%;
         margin-top: 100px;
-        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top center;
         transition: all 300ms ease-in-out; }
         .project .current-project .content .project-image:first-of-type {
           margin-top: 0; }
         .project .current-project .content .project-image img {
           width: 100%; }
-        .project .current-project .content .project-image.slide-in {
-          animation: slide-in-right 500ms forwards ease-in-out; }
+        .project .current-project .content .project-image.scale-in {
+          animation: scale-in 200ms forwards ease-in-out; }
 
 .nav-bar {
   width: 100%;
@@ -527,6 +556,9 @@ h2 {
       white-space: nowrap;
       font-size: 1rem;
       line-height: 1.618rem; }
+      @media (max-width: 768px) {
+        .nav-bar .about .info {
+          display: none; } }
 
 .work-nav {
   margin: 0;
@@ -536,6 +568,9 @@ h2 {
   transform: translateY(-50%);
   right: 0px;
   list-style: none; }
+  @media (max-width: 768px) {
+    .work-nav {
+      display: none; } }
   .work-nav .nav {
     position: relative;
     padding: 10px 30px;
@@ -576,6 +611,13 @@ h2 {
     transform: scale(0, 1); }
   100% {
     transform: scale(1, 1); } }
+.footer {
+  color: black;
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
+
 .next-project {
   border-top: 1px solid #e5e5e5;
   width: 100%;
@@ -641,11 +683,13 @@ h2 {
       background: #1C2471; }
 
 .work-card {
-  width: 400px;
-  height: 500px;
-  margin-left: 100px;
+  width: 500px;
+  height: 350px;
   position: relative;
   display: flex; }
+  @media (max-width: 768px) {
+    .work-card {
+      width: 100%; } }
   .work-card .fx, .work-card .image {
     width: 100%;
     height: 100%;
@@ -676,6 +720,12 @@ h2 {
     line-height: 9.708rem;
     font-family: "Butler";
     transition: all 200ms ease-in-out; }
+    @media (max-width: 768px) {
+      .work-card .title {
+        transform: translateX(0);
+        display: inline-block;
+        margin-top: 300px;
+        font-size: 4rem; } }
     .work-card .title:before {
       content: '';
       display: inline-block;
@@ -699,7 +749,7 @@ h2 {
     padding: 0;
     margin: 0;
     position: absolute;
-    transform: translate(420px, 400px);
+    transform: translate(520px, 250px);
     transform-origin: left top;
     overflow: hidden; }
   .work-card .roles > .role {
@@ -721,13 +771,11 @@ h2 {
     background-size: 130%; }
   100% {
     background-size: 100%; } }
-@keyframes slide-in-right {
+@keyframes scale-in {
   0% {
-    transform: translateX(100%);
-    opacity: 0; }
+    transform: scaleY(0); }
   100% {
-    transform: translateX(0);
-    opacity: 1; } }
+    transform: scaleY(1); } }
 @keyframes slide-in-left {
   0% {
     transform: translateX(-50px);
@@ -752,6 +800,10 @@ h2 {
   left: 0;
   top: 0;
   background: white; }
+  @media (max-width: 768px) {
+    .welcome {
+      line-height: 6rem;
+      text-align: center; } }
   .welcome .header {
     display: block;
     font-family: 'Butler', serif;
@@ -759,11 +811,13 @@ h2 {
     letter-spacing: -1.8px;
     color: black; }
   .welcome .oh {
-    position: relative; }
+    position: relative;
+    opacity: 0; }
   .welcome .intro {
     display: inline-block;
     margin: auto;
-    height: auto; }
+    height: auto;
+    opacity: 0; }
   .welcome .what {
     display: block;
     position: relative;
@@ -773,7 +827,7 @@ h2 {
     text-transform: uppercase; }
   .welcome .start {
     margin-top: 30px;
-    opacity: 1;
+    opacity: 0;
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
@@ -782,6 +836,7 @@ h2 {
     z-index: 100;
     padding: 12px 30px;
     font-family: "Butler";
+    transform: translateX(-10px);
     transition: all 200ms ease-in-out; }
     .welcome .start:before {
       content: '';
@@ -807,28 +862,61 @@ h2 {
   position: fixed;
   top: 0;
   left: 0;
-  display: flex; }
+  display: flex;
+  transform: scaleY(0);
+  opacity: 0;
+  transform-origin: top center;
+  transition: all 150ms ease-in-out; }
+  @media (max-width: 768px) {
+    .about-me {
+      flex-direction: column;
+      overflow: scroll; } }
+  .about-me.visible {
+    transform: scaleY(1);
+    opacity: 1; }
+    .about-me.visible .profile-picture {
+      transform: scaleY(1); }
+    .about-me.visible .bio {
+      transform: translateX(0px);
+      opacity: 1; }
   .about-me .profile-picture {
     width: 40%;
     height: 100%;
     display: block;
     background: url(../images/self.jpg);
-    background-position: 50% 50%; }
+    background-position: 50% 50%;
+    transform-origin: bottom center;
+    transform: scaleY(0);
+    transition: all 150ms ease-in-out 300ms; }
+    @media (max-width: 768px) {
+      .about-me .profile-picture {
+        display: none; } }
   .about-me .bio {
     padding: 50px;
     width: 60%;
     font-family: "Butler";
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 150ms ease-in-out 500ms;
+    transform-origin: left center;
     font-size: 3rem;
     line-height: 4.854rem; }
+    @media (max-width: 768px) {
+      .about-me .bio {
+        width: 100%; } }
     .about-me .bio .close {
       float: right;
-      font-size: 1.8rem; }
+      font-size: 3rem;
+      transition: all 300ms ease-in-out; }
+      .about-me .bio .close:hover {
+        transform: rotateZ(-180deg);
+        color: black; }
     .about-me .bio .text {
       margin-top: 100px; }
     .about-me .bio .yellow {
       color: #FECB2F; }
     .about-me .bio .link {
-      color: #7f7f7f;
+      color: black;
       text-decoration: none;
       position: relative; }
       .about-me .bio .link::before {
@@ -836,7 +924,7 @@ h2 {
         position: absolute;
         width: 0;
         height: 1px;
-        background: #7f7f7f;
+        background: black;
         bottom: -3px;
         left: 0;
         transition: all 200ms ease-in-out; }

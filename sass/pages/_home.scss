@@ -17,6 +17,11 @@
     left: 0;
     top: 0;
     background: white;
+    @include mobile{
+        line-height: 6rem;
+        text-align: center;
+    }
+
     .header {
         display: block;
         font-family: 'Butler', serif;
@@ -26,11 +31,13 @@
     }
     .oh {
         position: relative;
+        opacity: 0;
     }
     .intro {
         display: inline-block;
         margin: auto;
         height: auto;
+        opacity: 0;
     }
     .what {
         display: block;
@@ -42,7 +49,7 @@
     }
     .start {
         margin-top: 30px;
-        opacity: 1;
+        opacity: 0;
         display: inline-block;
         text-decoration: none;
         text-transform: uppercase;
@@ -51,6 +58,7 @@
         z-index: 100;
         padding: 12px 30px;
         font-family: $playfair;
+        transform: translateX(-10px);
         transition: all 200ms ease-in-out;
         &:before {
             content: '';

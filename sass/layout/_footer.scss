@@ -1,3 +1,12 @@
+.footer{
+    color: black;
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
 .next-project {
     border-top: 1px solid lighten($text-body, 40%);
     width: 100%;

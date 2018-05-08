@@ -22,14 +22,14 @@
     }
 }
 
-@keyframes slide-in-right {
+@keyframes scale-in {
     0% {
-        transform: translateX(100%);
-        opacity: 0;
+        transform: scaleY(0);
+        // opacity: 0;
     }
     100% {
-        transform: translateX(0);
-        opacity: 1;
+        transform: scaleY(1);
+        // opacity: 1;
     }
 }
 

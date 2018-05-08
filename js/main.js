@@ -12,12 +12,15 @@ $(window)
                 helloMessage.append('<span class="' + splitClass + '">' + letters[i] + '</span>')
             }
 
+
         }
         splitText('#hello', 'oh');
 
         //Animation Timeline for Introduction Hello Slide
-        TweenMax.staggerFrom('.oh', 3, {
-            opacity: 0
+
+        TweenMax.set('.intro',{opacity:1});
+        TweenMax.staggerTo('.oh', 3, {
+            opacity: 1
         }, 0.1);
         TweenMax.from('.what', .5, {
             y: 10,
@@ -25,9 +28,9 @@ $(window)
             delay: 3
         });
 
-        TweenMax.from('.start', .5, {
-            opacity: 0,
-            x: -10,
+        TweenMax.to('.start', .5, {
+            opacity: 1,
+            x: 0,
             delay: 3.5
         });
 
@@ -79,5 +82,22 @@ $('document').ready(function () {
             console.log('ready');
 
         });
+
+});
+
+$(document).ready(function(){
+    let about = document.getElementById('about');
+    let aboutBtn = document.getElementById('about-btn');
+    let aboutClose = document.getElementById('about-close');
+
+    $(aboutBtn).on('click', function(){
+        $(about).addClass('visible');
+        $('body').addClass('no-scroll');
+    });
+
+    $(aboutClose).on('click', function(){
+        $(about).removeClass('visible');
+        $('body').removeClass('no-scroll');
+    });
 
 });

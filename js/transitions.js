@@ -100,11 +100,6 @@ document
                     }
 
                 }
-                // $('body').scrollTop(0); Ripple Effect on Cover Image
-                $('.image')
-                    .on('mouseover', function () {
-                        $(this).ripples({resolution: 256, dropRadius: 20, perturbance: 0.03});
-                    });
 
                 // Scroll Magic Controller
                 var controller = new ScrollMagic.Controller();
@@ -138,7 +133,7 @@ document
                     cardAnimation.staggerFrom(workTitle, 0.15, {
                         y: 100,
                         ease: Power4.easeOut
-                    }, 0.1).fromTo(fxSlide, .5, {
+                    }, 0.1).fromTo(fxSlide, .3, {
                         scaleY: .1,
                         scaleX: 0,
                         transformOrigin: 'bottom center'
@@ -223,7 +218,7 @@ document
                 $('.project-image').each(function () {
                     var projScene = new ScrollMagic
                         .Scene({triggerElement: this, reverse: false})
-                        .setClassToggle(this, 'slide-in')
+                        .setClassToggle(this, 'scale-in')
                         .addTo(controller);
                 });
             });

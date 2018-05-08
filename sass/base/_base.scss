@@ -1,0 +1,11 @@
+body{
+    position: relative;
+    width: 100%;
+    &.no-scroll{
+        overflow: hidden !important;
+    }
+}
+#barba-wrapper{
+    display: block;
+    height: 100%;
+}
