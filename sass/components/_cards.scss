@@ -1,10 +1,9 @@
 .work-card {
     width: 500px;
     height: 350px;
-    // margin-left: 100px;
     position: relative;
     display: flex;
-    @include mobile{
+    @include mobile {
         width: 100%;
     }
     .fx {
@@ -19,32 +18,37 @@
     }
     .image {
         @extend .fx;
-        background: url(../../images/piggy.jpg);
+        background-color: white;
+        background-repeat: no-repeat;
         background-size: 100%;
         background-position: center center;
         background-color: none;
-        z-index: 9; // animation: zoom-out 20s alternate infinite;
+        z-index: 9;
     }
     .title {
         z-index: 100;
         margin: auto;
-        transform: translateX(200px);
+        transform-origin: left center;
+        transform: translate(480px, 100px);
         letter-spacing: -1.8px;
-        position: relative;
+        position: absolute;
         overflow: hidden;
-        padding-bottom: 5px;
+        padding: 5px 15px 5px 30px;
         color: black;
         text-decoration: none;
-        padding: 0 20px;
         @include font($larger-font);
         font-family: $playfair;
         transition: all 200ms ease-in-out;
-
-        @include mobile{
-             transform: translateX(0);
-             display: inline-block;
-             margin-top: 300px;
-             font-size: 4rem;
+        @include mobile {
+            transform: translateX(0);
+            text-align: center;
+            width: 100%;
+            display: inline-block;
+            margin-top: 350px;
+            font-size: 4rem;
+            &:before {
+                background: none;
+            }
         }
         &:before {
             content: '';
@@ -74,10 +78,10 @@
         padding: 0;
         margin: 0;
         position: absolute;
-        transform: translate(520px, 250px);
+        transform: translate(540px, 250px);
         transform-origin: left top;
         overflow: hidden;
-        @include mobile{
+        @include mobile {
             display: none;
         }
     }

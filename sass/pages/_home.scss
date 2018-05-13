@@ -6,6 +6,10 @@
 .work {
     padding-top: 100px;
     height: 100vh;
+    @include mobile {
+        padding-top: 150px;
+        height: auto;
+    }
 }
 
 .welcome {
@@ -17,11 +21,10 @@
     left: 0;
     top: 0;
     background: white;
-    @include mobile{
+    @include mobile {
         line-height: 6rem;
         text-align: center;
     }
-
     .header {
         display: block;
         font-family: 'Butler', serif;

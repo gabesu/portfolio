@@ -1,4 +1,4 @@
-.footer{
+.footer {
     color: black;
     display: block;
     width: 100%;
@@ -6,31 +6,34 @@
     bottom: 0;
 }
 
-
 .next-project {
-    border-top: 1px solid lighten($text-body, 40%);
-    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 30%;
     display: flex;
     padding: 50px;
     flex-direction: column;
+    @include mobile {
+        width: 100%;
+        position: relative;
+        text-align: center;
+    }
     .label {
-        margin: auto;
         text-transform: uppercase;
         font-size: $small-font;
-        padding: 20px;
     }
     .next {
         font-family: $playfair;
         font-size: $large-font;
         color: black;
-        margin: auto;
         position: relative;
         text-decoration: none;
         &::before {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
+            height: 1px;
             background: black;
             bottom: -10px;
             left: 0;
